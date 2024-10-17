@@ -1,0 +1,64 @@
+@use "mixins";
+@use "vars";
+
+@font-face {
+    font-weight: 400;
+    font-family: Inter;
+    font-style: normal;
+    src:
+        url("../assets/fonts/Inter-Regular.ttf") format("ttf"),
+        url("../assets/fonts/Inter-Regular.woff") format("woff"),
+        url("../assets/fonts/Inter-Regular.woff2") format("woff2");
+}
+
+@font-face {
+    font-weight: 500;
+    font-family: Inter;
+    font-style: normal;
+    src:
+        url("../assets/fonts/Inter-Medium.ttf") format("ttf"),
+        url("../assets/fonts/Inter-Medium.woff") format("woff"),
+        url("../assets/fonts/Inter-Medium.woff2") format("woff2");
+}
+
+@font-face {
+    font-weight: 700;
+    font-family: Inter;
+    font-style: normal;
+    src:
+        url("../assets/fonts/Inter-Bold.ttf") format("ttf"),
+        url("../assets/fonts/Inter-Bold.woff") format("woff"),
+        url("../assets/fonts/Inter-Bold.woff2") format("woff2");
+}
+
+body {
+    margin: 0;
+    font-family: Inter, Arial, sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    color: vars.$main-font-color;
+}
+
+.main {
+    @include mixins.container;
+
+    margin-top: 20px;
+    margin-bottom: 80px;
+}
+
+.wrapper {
+    @include mixins.container;
+
+    width: 100%;
+}
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    border: 0;
+    clip: rect(0 0 0 0);
+}

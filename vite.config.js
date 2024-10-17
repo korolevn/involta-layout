@@ -11,6 +11,13 @@ export default {
         }
     },
     base: './',
+    css: {
+    preprocessorOptions: {
+            scss: {
+                api: 'modern-compiler',
+            }
+        }
+    },
     plugins: [
         vituum(),
         pug({root: '/src',}),

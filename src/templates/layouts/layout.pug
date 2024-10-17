@@ -1,0 +1,14 @@
+doctype html
+html(lang="ru")
+    head
+        link(rel="stylesheet" href="/src/styles/style.scss")
+        script(type='module' src="/src/scripts/script.js")
+        include head
+
+    body
+        include ../../assets/img/sprite.svg
+
+        include header
+        main.main
+            block content
+

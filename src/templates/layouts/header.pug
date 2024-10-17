@@ -1,0 +1,40 @@
+-
+    const menuItems = [
+        { text: "Гостиная", link: "#", width: 15, height: 14, icon: "#living-room-icon" },
+        { text: "Кухня", link: "#", width: 14, height: 15, icon: "#kitchen-icon" },
+        { text: "Детская", link: "#", width: 16, height: 14, icon: "#childrens-room-icon" },
+        { text: "Ванная", link: "#", width: 17, height: 16, icon: "#bathroom-icon" },
+        { text: "Спальня", link: "#", width: 18, height: 16, icon: "#bedroom-icon" }
+    ];
+-
+    const userMenuItems = [
+        { text: "Открыть поиск",  width: 16, height: 16, icon: "#search-icon" },
+        { text: "Открыть избранное", width: 18, height: 16, icon: "#favorites-icon" },
+        { text: "Открыть меню", width: 22, height: 12, icon: "#burger-menu-icon" },
+    ];
+
+header.header
+    .wrapper.header__wrapper
+        .header__logo.logo
+            a(class="logo__link" href="#")
+                include ../../assets/img/logo.svg
+        nav.header__navigation
+            .menu
+                ul.menu__list
+                    each item in menuItems
+                        li.menu__item
+                            a.menu__link(href=item.link)
+                                svg(class="menu__icon" width=item.width height=item.height)
+                                    use(xlink:href=item.icon)
+                                =item.text
+            .user-menu
+                ul.user-menu__list
+                    each item in userMenuItems
+                        li.user-menu__item
+                            button.user-menu__btn
+                                span.visually-hidden=item.text
+                                svg(class="user-menu__icon" width=item.width height=item.height)
+                                    use(xlink:href=item.icon)
+
+
+

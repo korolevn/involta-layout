@@ -1,0 +1,44 @@
+@use "vars";
+
+@mixin container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    column-gap: 20px;
+    max-width: 1360px;
+    margin: 0 auto;
+}
+
+@mixin clear-list {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+@mixin clear-link {
+    text-decoration: none;
+    color: vars.$main-font-color;
+}
+
+@mixin transparent-btn {
+    border: none;
+    padding: 0;
+    background-color: transparent;
+    color: inherit;
+    outline: none;
+}
+
+@mixin btn {
+    border: 1px solid vars.$main-font-color;
+    background-color: vars.$white-color;
+    color: vars.$main-font-color;
+    font-family: Inter, Arial, sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+    cursor: pointer;
+    transition: vars.$transition;
+
+    &:hover {
+        background-color: vars.$main-font-color;
+        color: vars.$white-color;
+    }
+}

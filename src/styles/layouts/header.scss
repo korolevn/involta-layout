@@ -1,0 +1,72 @@
+@use "../common/mixins";
+@use "../common/vars";
+
+.header {
+    width: 100%;
+    display: flex;
+
+    &__navigation {
+        display: flex;
+        justify-content: space-between;
+        grid-column: span 5;
+    }
+
+    &__logo {
+        margin-top: 19px;
+        margin-bottom: 20px;
+    }
+}
+
+.menu,
+.user-menu {
+    display: flex;
+    text-align: center;
+}
+
+.menu__list,
+.user-menu__list {
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.menu__list {
+    column-gap: 58px;
+}
+
+.user-menu__list {
+    column-gap: 40px;
+}
+
+.menu__item,
+.user-menu__item {
+    list-style: none;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+}
+
+.menu__link,
+.user-menu__link {
+    @include mixins.clear-link;
+
+    text-transform: uppercase;
+}
+
+.menu__link {
+    display: flex;
+    align-items: center;
+    column-gap: 10px;
+    color: vars.$main-font-color;
+    font-size: 20px;
+    font-weight: 400;
+    letter-spacing: -0.03em;
+}
+
+.user-menu__btn {
+    @include mixins.transparent-btn;
+
+    display: flex;
+    align-self: center;
+    cursor: pointer;
+}

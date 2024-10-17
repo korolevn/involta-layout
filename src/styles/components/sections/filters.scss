@@ -7,6 +7,8 @@
         margin-top: 0;
         margin-bottom: 23px;
         font-weight: 400;
+        line-height: normal;
+        letter-spacing: normal;
     }
 
     &__form {
@@ -19,6 +21,8 @@
         margin-bottom: 15px;
         padding: 0;
         font-weight: 700;
+        line-height: normal;
+        letter-spacing: normal;
     }
 
     &__list {
@@ -172,6 +176,8 @@
     &__label-name,
     &__label-count {
         margin: 0;
+        line-height: normal;
+        letter-spacing: normal;
     }
 
     &__label-name {

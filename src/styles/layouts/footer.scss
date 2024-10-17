@@ -13,6 +13,7 @@
     &__title {
         margin: 0;
         margin-bottom: 10px;
+        line-height: normal;
     }
 
     &__list {
@@ -21,6 +22,8 @@
         display: flex;
         flex-direction: column;
         row-gap: 8px;
+        letter-spacing: normal;
+        line-height: normal;
     }
 
     &__top {
@@ -32,7 +35,6 @@
 
     &__bottom {
         display: flex;
-        justify-content: space-between;
         border-top: 1px dashed $dark-gray-color;
         padding-top: 30px;
         padding-bottom: 32px;
@@ -84,6 +86,8 @@
 
     &__list {
         row-gap: 24px;
+        letter-spacing: $letter-spacing;
+        line-height: 26px;
     }
 
     &__city {
@@ -103,6 +107,7 @@
 .socials {
     display: flex;
     align-items: center;
+    margin-right: auto;
 
     &__list {
         @include clear-list;
@@ -121,4 +126,8 @@
 .address {
     margin: 0;
     line-height: 22px;
+}
+
+.copyright {
+    margin-right: 350px;
 }

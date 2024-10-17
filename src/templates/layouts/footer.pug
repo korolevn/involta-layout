@@ -1,0 +1,112 @@
+-
+    const aboutItems = [
+        {text: "О Компании", link: "#"},
+        {text: "Новости", link: "#"},
+        {text: "Акции и скидки", link: "#"},
+        {text: "Гарантии", link: "#"},
+        {text: "Розничная сеть", link: "#"},
+        {text: "О бренде", link: "#"},
+        {text: "Отзывы", link: "#"},
+        {text: "Контакты", link: "#"}
+        ];
+
+-
+    const helpItems = [
+    {text: "Избранное", link: "#"},
+    {text: "Личный кабинет", link: "#"},
+    {text: "FAQ", link: "#"},
+    {text: "Оптовикам", link: "#"},
+    {text: "Партнеры", link: "#"},
+    {text: "Как купить", link: "#"},
+    {text: "Доставка и оплата", link: "#"},
+    {text: "Условия покупки", link: "#"}
+    ];
+
+-
+    const catalogItems = [
+    {text: "Гостиная", link: "#"},
+    {text: "Кухня", link: "#"},
+    {text: "Детская", link: "#"},
+    {text: "Ванная", link: "#"},
+    {text: "Спальня", link: "#"},
+    {text: "Новинки", link: "#"},
+    {text: "Lookbook", link: "#"},
+    {text: "Распродажа", link: "#"},
+    {text: "Коллекции", link: "#"}
+    ];
+-
+    const contactsItems = [
+    {city: "Иваново", phoneNumber: "+7 (4932) 11-11-11", link: "84932111111"},
+    {city: "Москва", phoneNumber: "+7 (495) 111-11-11", link: "84932111111"}
+    ];
+-
+    const socials = [
+    {title: "Вконтакте", icon: "#vk-icon", width: 28, height: 15, link: "https://vk.com/"},
+    {title: "Инстаграм", icon: "#inst-icon", width: 18, height: 18, link: "https://www.instagram.com/"},
+    {title: "Одноклассники", icon: "#ok-icon", width: 14, height: 21, link: "https://ok.ru/"},
+    ];
+
+footer.footer
+    .footer__wrapper
+        .footer__top
+            .footer__logo.logo
+                a(class="logo__link" href="#")
+                    include ../../assets/img/logo.svg
+            nav.footer__navigation
+                .footer__about.about
+                    h3.about__title.footer__title О компании
+                    .about__list
+                        ul.about__list-left-column.footer__list
+                            - for (var x = 0; x < 5; x++)
+                                li.about__item
+                                    a.about__link(href=aboutItems[x].link)=aboutItems[x].text
+                        ul.about__list-right-column.footer__list
+                            - for (var x = 5; x < 8; x++)
+                                li.about__item
+                                    a.about__link(href=aboutItems[x].link)=aboutItems[x].text
+                .footer__help.help
+                    h3.help__title.footer__title Помощь
+                    .help__list
+                        ul.help__list-left-column.footer__list
+                            - for (var x = 0; x < 5; x++)
+                                li.help__item
+                                    a.help__link(href=helpItems[x].link)=helpItems[x].text
+                        ul.help__list-right-column.footer__list
+                            - for (var x = 5; x < 8; x++)
+                                li.help__item
+                                    a.help__link(href=helpItems[x].link)=helpItems[x].text
+                .footer__catalog-info.catalog-info
+                    h3.catalog-info__title.footer__title Каталог
+                    .catalog-info__list
+                        ul.catalog-info__list-left-column.footer__list
+                            - for (var x = 0; x < 5; x++)
+                                li.catalog-info__item
+                                    a.catalog-info__link(href=catalogItems[x].link)=catalogItems[x].text
+                        ul.catalog-info__list-right-column.footer__list
+                            - for (var x = 5; x < 9; x++)
+                                li.catalog-info__item
+                                    a.catalog-info__link(href=catalogItems[x].link)=catalogItems[x].text
+                .footer__contacts.contacts
+                    h3.contacts__title.footer__title Контакты
+                    ul.contacts__list.footer__list
+                        each item in contactsItems
+                            li.contacts__item
+                                p.contacts__city=item.city
+                                a.contacts__phone(href=href=`tel:${item.link}`)=item.phoneNumber
+        .footer__bottom
+            p.copyright «Natura» —Торговая марка компании
+                br
+                .
+                    Все права защищены
+            .socials
+                ul.socials__list
+                    each social in socials
+                        li.socials__item
+                            a.socials__link(href=social.link)
+                                p.visually-hidden= social.title
+                                svg(class="socials__icon" width=social.width height=social.height)
+                                    use(xlink:href=social.icon)
+            p.address Россия, 153032, г. Иваново,
+                br
+                .
+                    ул. Пушкина, д. 20 стр. 90

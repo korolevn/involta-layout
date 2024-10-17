@@ -27,13 +27,6 @@
     display: flex;
 }
 
-.menu__list {
-    column-gap: 58px;
-}
-
-.user-menu__list {
-    column-gap: 40px;
-}
 
 .menu__item,
 .user-menu__item {
@@ -48,22 +41,34 @@
     @include clear-link;
 
     text-transform: uppercase;
+    line-height: normal;
 }
 
-.menu__link {
-    display: flex;
-    align-items: center;
-    column-gap: 10px;
-    color: $main-font-color;
-    font-size: 20px;
-    font-weight: 400;
-    letter-spacing: -0.03em;
+.menu {
+    &__list {
+        column-gap: 58px;
+    }
+
+    &__link {
+        display: flex;
+        align-items: center;
+        column-gap: 10px;
+        color: $main-font-color;
+        font-size: 20px;
+        font-weight: 400;
+    }
 }
 
-.user-menu__btn {
-    @include transparent-btn;
+.user-menu {
+    &__list {
+        column-gap: 40px;
+    }
 
-    display: flex;
-    align-self: center;
-    cursor: pointer;
+    &__btn {
+        @include transparent-btn;
+
+        display: flex;
+        align-self: center;
+        cursor: pointer;
+    }
 }

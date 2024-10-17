@@ -10,7 +10,7 @@ $cards-gap: 15px;
         margin-top: 9px;
         margin-bottom: 16px;
         font-size: 40px;
-        letter-spacing: -0.03em;
+        line-height: normal;
 
         &::after {
             content: "";
@@ -30,7 +30,6 @@ $cards-gap: 15px;
     &__description {
         margin: 0;
         margin-bottom: 20px;
-        line-height: 26px;
     }
 
     &__list {
@@ -51,6 +50,8 @@ $cards-gap: 15px;
     }
 
     &__pagination {
+        display: flex;
+        justify-content: space-between;
         margin-top: 68px;
     }
 }
@@ -75,6 +76,9 @@ $cards-gap: 15px;
 
         position: relative;
         padding-bottom: 2px;
+        font-size: 12px;
+        letter-spacing: normal;
+        line-height: normal;
 
         &::after {
             content: "";
@@ -179,6 +183,11 @@ $cards-gap: 15px;
         min-height: 34px;
         font-size: 14px;
     }
+
+    &__show-more-btn {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
 }
 
 .catalog__item {
@@ -254,6 +263,8 @@ $cards-gap: 15px;
         margin: 0;
         font-size: 16px;
         font-weight: 400;
+        line-height: normal;
+        letter-spacing: normal;
         transition-duration: $transition;
 
         &::after {
@@ -274,6 +285,8 @@ $cards-gap: 15px;
         margin: 0;
         color: $dark-gray-color;
         font-size: 14px;
+        line-height: normal;
+        letter-spacing: normal;
     }
 }
 

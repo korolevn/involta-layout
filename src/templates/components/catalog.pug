@@ -1,0 +1,64 @@
+-
+    const breadcrumbsItems = [
+    {text: "Главная", isActive: false, link: "#"},
+    {text: "Каталог", isActive: false, link: "#"},
+    {text: "Спальня", isActive: false, link: "#"},
+    {text: "Постельное бельё", isActive: true }
+    ];
+
+-
+    const sortItems = [
+    {text: "По популярности", isActive: false},
+    {text: "Материал", isActive: true},
+    {text: "Размер", isActive: false}
+    ];
+
+section.catalog
+    .breadcrumbs.catalog__breadcrumbs
+        ul.breadcrumbs__list
+            each item in breadcrumbsItems
+                li.breadcrumbs__item
+                    a(class=`breadcrumbs__link ${item.isActive ? "breadcrumbs__link_active" : ""}` href=item.link)=item.text
+
+    h1.catalog__title Постельное бельё
+    p.catalog__description Правомочен микрохроматический интервал традиционно трансформирует комплексный голос, что несомненно приведет нас к истине вектор переворачивает аккорд. Скачок функции, как бы это ни казалось парадоксальным, начинает голос наибольшее и наименьшее значения функции вызывает ряд тейлора. Сумма ряда концентрирует миксолидийский нонаккорд, что и требовалось доказать.
+
+    .catalog__sort.sort
+        ul.sort__list
+            each item in sortItems
+                li.sort__item
+                    button(class=`sort__btn${item.isActive ? " sort__btn_active" : ""}`)=item.text
+        p.catalog__sort-counter 1 120 товаров
+
+    ul.catalog__list
+        - for (var i = 1; i < 13; i++)
+            li.catalog__item.product-card
+                a.product-card__link(href="#")
+                    button.product-card__favorites-btn
+                    .swiper.mySwiper.swiper-pagination-hover-wrap
+                        .swiper-wrapper
+                            - for (var j = 1; j < 5; j++)
+                                .swiper-slide
+                                    img(
+                                        src=`/src/assets/img/product-card-${i}.jpg`
+                                        class="product-card__image"
+                                    )
+                        .swiper-pagination
+                    .product-card__info
+                        h3.product-card__name КПБ «Мальва»
+                        p.product-card__caption Рис. 5676
+
+    .catalog__pagination.pagination
+        ul.pagination__list
+            li.pagination__item
+                a.pagination__link(href="#")
+                    svg(class="pagination__arrow-icon" width="14" height="13")
+                        use(xlink:href="#arrow-icon")
+                    ="Назад"
+            - for (var i = 1; i < 5; i++)
+                li.pagination__item
+                    a.pagination__link(href="#")=i
+            li.pagination__item
+                a.pagination__link(href="#") Вперёд
+                    svg(class="pagination__arrow-icon" width="14" height="13")
+                        use(xlink:href="#arrow-icon")

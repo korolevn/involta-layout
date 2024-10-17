@@ -1,0 +1,124 @@
+.footer {
+    @include container;
+
+    display: flex;
+    border-top: 1px solid $main-font-color;
+
+    &__navigation {
+        grid-column: span 5;
+        display: flex;
+        width: 100%;
+    }
+
+    &__title {
+        margin: 0;
+        margin-bottom: 10px;
+    }
+
+    &__list {
+        @include clear-list;
+
+        display: flex;
+        flex-direction: column;
+        row-gap: 8px;
+    }
+
+    &__top {
+        @include container;
+
+        padding-top: 35px;
+        padding-bottom: 58px;
+    }
+
+    &__bottom {
+        display: flex;
+        justify-content: space-between;
+        border-top: 1px dashed $dark-gray-color;
+        padding-top: 30px;
+        padding-bottom: 32px;
+    }
+}
+
+.about {
+    margin-right: 64px;
+
+    &__list {
+        display: flex;
+        column-gap: 39px;
+    }
+
+    &__link {
+        @include clear-link;
+    }
+}
+
+.help {
+    margin-right: 74px;
+
+    &__list {
+        display: flex;
+        column-gap: 38px;
+    }
+
+    &__link {
+        @include clear-link;
+    }
+}
+
+.catalog-info {
+    margin-right: 28px;
+
+    &__list {
+        display: flex;
+        column-gap: 34px;
+    }
+
+    &__link {
+        @include clear-link;
+    }
+}
+
+.contacts {
+    display: flex;
+    flex-direction: column;
+
+    &__list {
+        row-gap: 24px;
+    }
+
+    &__city {
+        margin: 0;
+        margin-bottom: 2px;
+        font-size: 13px;
+    }
+
+    &__phone {
+        @include clear-link;
+
+        font-size: 24px;
+        font-weight: 500;
+    }
+}
+
+.socials {
+    display: flex;
+    align-items: center;
+
+    &__list {
+        @include clear-list;
+
+        display: flex;
+        align-items: center;
+        column-gap: 30px;
+    }
+
+    &__icon {
+        display: flex;
+    }
+}
+
+.copyright,
+.address {
+    margin: 0;
+    line-height: 22px;
+}

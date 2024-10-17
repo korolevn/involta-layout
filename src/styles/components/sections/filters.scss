@@ -1,7 +1,5 @@
-@use "../common/vars";
-@use "../common/mixins";
-
 .filters {
+    // :todo;
     grid-column: span 1;
     font-size: 14px;
 
@@ -24,7 +22,7 @@
     }
 
     &__list {
-        @include mixins.clear-list;
+        @include clear-list;
 
         display: flex;
         flex-direction: column;
@@ -48,7 +46,7 @@
 
         &:checked ~ span {
             position: relative;
-            background-color: vars.$main-font-color;
+            background-color: $main-font-color;
 
             &::after {
                 content: "";
@@ -57,12 +55,12 @@
                 left: 50%;
                 margin-top: -4px;
                 margin-left: -4px;
-                border-bottom: 2px solid vars.$white-color;
-                border-left: 2px solid vars.$white-color;
+                border-bottom: 2px solid $white-color;
+                border-left: 2px solid $white-color;
                 height: 4px;
                 width: 7px;
                 transform: rotate(-45deg);
-                color: vars.$white-color;
+                color: $white-color;
             }
         }
 
@@ -70,7 +68,7 @@
             &:checked ~ span {
                 position: relative;
                 border-radius: 50%;
-                background-color: vars.$white-color;
+                background-color: $white-color;
 
                 &::after {
                     content: "";
@@ -79,12 +77,12 @@
                     left: 50%;
                     margin-top: -4px;
                     margin-left: -4px;
-                    border-bottom: 1.5px solid vars.$main-font-color;
-                    border-left: 1.5px solid vars.$main-font-color;
+                    border-bottom: 1.5px solid $main-font-color;
+                    border-left: 1.5px solid $main-font-color;
                     height: 4px;
                     width: 7px;
                     transform: rotate(-45deg);
-                    color: vars.$white-color;
+                    color: $white-color;
                 }
 
                 &::before {
@@ -94,7 +92,7 @@
                     left: 50%;
                     margin-left: -11px;
                     margin-top: -11px;
-                    border: 1px solid vars.$light-gray-color;
+                    border: 1px solid $light-gray-color;
                     border-radius: 50%;
                     width: 22px;
                     height: 22px;
@@ -119,7 +117,7 @@
 
             &_peach {
                 &:checked ~ span {
-                    background-color: vars.$peach-color;
+                    background-color: $peach-color;
 
                     &::before {
                         border-color: #d9ccbc;
@@ -129,10 +127,10 @@
 
             &_yellow {
                 &:checked ~ span {
-                    background-color: vars.$yellow-color;
+                    background-color: $yellow-color;
 
                     &::before {
-                        border-color: vars.$yellow-color;
+                        border-color: $yellow-color;
                     }
                 }
             }
@@ -141,7 +139,7 @@
 
     &__pseudo-checkbox {
         border-radius: 2px;
-        border: 1px solid vars.$main-font-color;
+        border: 1px solid $main-font-color;
         width: 16px;
         height: 16px;
         box-sizing: border-box;
@@ -154,11 +152,11 @@
             box-sizing: border-box;
 
             &_white {
-                border: 1px solid vars.$light-gray-color;
+                border: 1px solid $light-gray-color;
             }
 
             &_peach {
-                background-color: vars.$peach-color;
+                background-color: $peach-color;
             }
 
             &_sheet {
@@ -166,7 +164,7 @@
             }
 
             &_yellow {
-                background-color: vars.$yellow-color;
+                background-color: $yellow-color;
             }
         }
     }
@@ -182,6 +180,6 @@
 
     &__label-count {
         margin-left: 4px;
-        color: vars.$light-gray-color;
+        color: $light-gray-color;
     }
 }

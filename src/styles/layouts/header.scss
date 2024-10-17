@@ -1,6 +1,3 @@
-@use "../common/mixins";
-@use "../common/vars";
-
 .header {
     width: 100%;
     display: flex;
@@ -48,7 +45,7 @@
 
 .menu__link,
 .user-menu__link {
-    @include mixins.clear-link;
+    @include clear-link;
 
     text-transform: uppercase;
 }
@@ -57,14 +54,14 @@
     display: flex;
     align-items: center;
     column-gap: 10px;
-    color: vars.$main-font-color;
+    color: $main-font-color;
     font-size: 20px;
     font-weight: 400;
     letter-spacing: -0.03em;
 }
 
 .user-menu__btn {
-    @include mixins.transparent-btn;
+    @include transparent-btn;
 
     display: flex;
     align-self: center;

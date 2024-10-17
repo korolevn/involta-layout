@@ -1,0 +1,21 @@
+.user-info {
+    display: grid;
+    grid-column: 2 / 7;
+
+    &__list {
+        @include clear-list;
+
+        display: flex;
+        flex-direction: column;
+        row-gap: 40px;
+    }
+
+    &__title {
+        margin: 0;
+        margin-bottom: 11px;
+    }
+
+    &__description {
+        margin: 0;
+    }
+}

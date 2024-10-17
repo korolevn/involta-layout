@@ -1,5 +1,3 @@
-@use "vars";
-
 @mixin container {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
@@ -16,7 +14,7 @@
 
 @mixin clear-link {
     text-decoration: none;
-    color: vars.$main-font-color;
+    color: $main-font-color;
 }
 
 @mixin transparent-btn {
@@ -28,17 +26,17 @@
 }
 
 @mixin btn {
-    border: 1px solid vars.$main-font-color;
-    background-color: vars.$white-color;
-    color: vars.$main-font-color;
+    border: 1px solid $main-font-color;
+    background-color: $white-color;
+    color: $main-font-color;
     font-family: Inter, Arial, sans-serif;
     font-size: 12px;
     font-weight: 400;
     cursor: pointer;
-    transition: vars.$transition;
+    transition: $transition;
 
     &:hover {
-        background-color: vars.$main-font-color;
-        color: vars.$white-color;
+        background-color: $main-font-color;
+        color: $white-color;
     }
 }

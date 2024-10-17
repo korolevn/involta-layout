@@ -3,6 +3,9 @@ import { fileURLToPath, URL } from 'node:url'
 import pug from '@vituum/vite-plugin-pug'
 import pages from 'vituum/plugins/pages.js'
 import imports from "vituum/plugins/imports.js";
+import stylelint from "vite-plugin-stylelint";
+import eslint from "vite-plugin-eslint";
+
 
 export default {
     resolve: {
@@ -19,6 +22,8 @@ export default {
         }
     },
     plugins: [
+        stylelint(),
+        eslint(),
         vituum(),
         pug({root: '/src',}),
         imports({

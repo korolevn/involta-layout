@@ -1,8 +1,11 @@
+@use "../common/mixins";
+@use "../common/vars";
+
 .footer {
-    @include container;
+    @include mixins.container;
 
     display: flex;
-    border-top: 1px solid $main-font-color;
+    border-top: 1px solid vars.$main-black-color;
 
     &__navigation {
         grid-column: span 5;
@@ -17,7 +20,7 @@
     }
 
     &__list {
-        @include clear-list;
+        @include mixins.clear-list;
 
         display: flex;
         flex-direction: column;
@@ -27,7 +30,7 @@
     }
 
     &__top {
-        @include container;
+        @include mixins.container;
 
         padding-top: 35px;
         padding-bottom: 58px;
@@ -35,7 +38,7 @@
 
     &__bottom {
         display: flex;
-        border-top: 1px dashed $dark-gray-color;
+        border-top: 1px dashed vars.$dark-gray-color;
         padding-top: 30px;
         padding-bottom: 32px;
     }
@@ -50,7 +53,7 @@
     }
 
     &__link {
-        @include clear-link;
+        @include mixins.clear-link;
     }
 }
 
@@ -63,7 +66,7 @@
     }
 
     &__link {
-        @include clear-link;
+        @include mixins.clear-link;
     }
 }
 
@@ -76,7 +79,7 @@
     }
 
     &__link {
-        @include clear-link;
+        @include mixins.clear-link;
     }
 }
 
@@ -86,7 +89,7 @@
 
     &__list {
         row-gap: 24px;
-        letter-spacing: $letter-spacing;
+        letter-spacing: vars.$letter-spacing;
         line-height: 26px;
     }
 
@@ -97,7 +100,7 @@
     }
 
     &__phone {
-        @include clear-link;
+        @include mixins.clear-link;
 
         font-size: 24px;
         font-weight: 500;
@@ -110,7 +113,7 @@
     margin-right: auto;
 
     &__list {
-        @include clear-list;
+        @include mixins.clear-list;
 
         display: flex;
         align-items: center;

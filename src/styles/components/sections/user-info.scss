@@ -1,9 +1,11 @@
+@use "../../common/mixins";
+
 .user-info {
     display: grid;
     grid-column: 2 / 7;
 
     &__list {
-        @include clear-list;
+        @include mixins.clear-list;
 
         display: flex;
         flex-direction: column;

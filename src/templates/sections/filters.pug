@@ -1,0 +1,78 @@
+-
+    const filters = [
+        { title: "Вид ткани",
+        items: [
+            {name: "Бязь", count: 3},
+            {name: "Сатин", count: 9},
+            {name: "Поплин", count: 1},
+            {name: "Ранфорс", count: 34},
+            {name: "Перкаль", count: 9}
+            ]
+        },
+        { title: "Размер",
+        items: [
+            {name: "1,5 сп", count: 3},
+            {name: "2 сп", count: 9},
+            {name: "Евро", count: 1},
+            {name: "Семейный", count: 34},
+            ]
+        },
+        { title: "Дизайн",
+        items: [
+            {name: "Цветы", count: 3},
+            {name: "Геометрия", count: 9},
+            {name: "Абстракция", count: 1},
+            {name: "Animal", count: 34},
+            ]
+        },
+        { title: "Тип",
+        items: [
+            {name: "Комплект", count: 3},
+            {name: "Пододеяльник", count: 9},
+            {name: "Простыня", count: 1},
+            {name: "Комплект наволочек", count: 34},
+            ]
+        },
+        { title: "Цвет",
+        isCheckboxRound: true,
+        items: [
+            {name: "Белый", count: 3, color: "white"},
+            {name: "Персиковый", count: 9, color: "peach"},
+            {name: "Простыня", count: 1, color: "sheet"},
+            {name: "Желтый", count: 34, color: "yellow"},
+            {name: "Белый", count: 3, color: "white"},
+            ]
+        },
+    ];
+
+section.filters
+    h3.filters__title Все товары
+    form.filters__form
+        each filter in filters
+            fieldset.filters__item
+                legend.filters__legend=filter.title
+                ul.filters__list
+                    each item in filter.items
+                        li.filters__item-field
+                            label.filters__item-wrapper
+                                input(
+                                    type="checkbox"
+                                    class=`filters__checkbox
+                                    ${
+                                        filter.isCheckboxRound ? "filters__checkbox_round" : ""
+                                    }
+                                    ${
+                                        item.color ? `filters__checkbox_round_${item.color}` : ""
+                                    }`
+                                )
+                                span(
+                                    class=`filters__pseudo-checkbox
+                                    ${
+                                        filter.isCheckboxRound ? "filters__pseudo-checkbox_round" : ""
+                                    }
+                                    ${
+                                        item.color ? `filters__pseudo-checkbox_round_${item.color}` : ""
+                                    }`
+                                )
+                                p.filters__label-name=item.name
+                                p.filters__label-count=item.count

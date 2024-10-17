@@ -1,0 +1,187 @@
+@use "../common/vars";
+@use "../common/mixins";
+
+.filters {
+    grid-column: span 1;
+    font-size: 14px;
+
+    &__title {
+        margin-top: 0;
+        margin-bottom: 23px;
+        font-weight: 400;
+    }
+
+    &__form {
+        display: flex;
+        flex-direction: column;
+        row-gap: 34px;
+    }
+
+    &__legend {
+        margin-bottom: 15px;
+        padding: 0;
+        font-weight: 700;
+    }
+
+    &__list {
+        @include mixins.clear-list;
+
+        display: flex;
+        flex-direction: column;
+        row-gap: 12px;
+    }
+
+    &__item {
+        margin: 0;
+        border: none;
+        padding: 0;
+
+        &-wrapper {
+            display: flex;
+            cursor: pointer;
+        }
+    }
+
+    &__checkbox {
+        display: none;
+        margin: 0;
+
+        &:checked ~ span {
+            position: relative;
+            background-color: vars.$main-font-color;
+
+            &::after {
+                content: "";
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                margin-top: -4px;
+                margin-left: -4px;
+                border-bottom: 2px solid vars.$white-color;
+                border-left: 2px solid vars.$white-color;
+                height: 4px;
+                width: 7px;
+                transform: rotate(-45deg);
+                color: vars.$white-color;
+            }
+        }
+
+        &_round {
+            &:checked ~ span {
+                position: relative;
+                border-radius: 50%;
+                background-color: vars.$white-color;
+
+                &::after {
+                    content: "";
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    margin-top: -4px;
+                    margin-left: -4px;
+                    border-bottom: 1.5px solid vars.$main-font-color;
+                    border-left: 1.5px solid vars.$main-font-color;
+                    height: 4px;
+                    width: 7px;
+                    transform: rotate(-45deg);
+                    color: vars.$white-color;
+                }
+
+                &::before {
+                    content: "";
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    margin-left: -11px;
+                    margin-top: -11px;
+                    border: 1px solid vars.$light-gray-color;
+                    border-radius: 50%;
+                    width: 22px;
+                    height: 22px;
+                    box-sizing: border-box;
+                }
+            }
+
+            &_white {
+                &:checked ~ span {
+                    border: none;
+                    background: radial-gradient(
+                        circle,
+                        rgb(255 255 255 / 100%) 0%,
+                        rgb(234 238 244 / 100%) 100%
+                    );
+
+                    &::after {
+                        border-color: #595959;
+                    }
+                }
+            }
+
+            &_peach {
+                &:checked ~ span {
+                    background-color: vars.$peach-color;
+
+                    &::before {
+                        border-color: #d9ccbc;
+                    }
+                }
+            }
+
+            &_yellow {
+                &:checked ~ span {
+                    background-color: vars.$yellow-color;
+
+                    &::before {
+                        border-color: vars.$yellow-color;
+                    }
+                }
+            }
+        }
+    }
+
+    &__pseudo-checkbox {
+        border-radius: 2px;
+        border: 1px solid vars.$main-font-color;
+        width: 16px;
+        height: 16px;
+        box-sizing: border-box;
+
+        &_round {
+            border: none;
+            border-radius: 50%;
+            width: 18px;
+            height: 18px;
+            box-sizing: border-box;
+
+            &_white {
+                border: 1px solid vars.$light-gray-color;
+            }
+
+            &_peach {
+                background-color: vars.$peach-color;
+            }
+
+            &_sheet {
+                background: radial-gradient(circle, #ecf0f5 0%, #ccd6e6 100%);
+            }
+
+            &_yellow {
+                background-color: vars.$yellow-color;
+            }
+        }
+    }
+
+    &__label-name,
+    &__label-count {
+        margin: 0;
+    }
+
+    &__label-name {
+        margin-left: 10px;
+    }
+
+    &__label-count {
+        margin-left: 4px;
+        color: vars.$light-gray-color;
+    }
+}

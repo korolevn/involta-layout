@@ -1,4 +1,5 @@
-@use "../styles/common/vars";
-@use "../styles/common/mixins";
-@use "../styles/common/common";
-@use "../styles/layouts/header";
+@import "../styles/common/vars";
+@import "../styles/common/mixins";
+@import "../styles/common/common";
+@import "../styles/layouts/header";
+@import "../styles/components/filters";
